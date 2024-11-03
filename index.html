@@ -1,0 +1,65 @@
+<html>
+<head>
+    <title>Light Switch</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        .light-bulb {
+            font-size: 100px;
+            color: #ccc;
+            transition: color 0.5s ease;
+        }
+        .light-bulb.on {
+            color: #ffeb3b;
+        }
+        .switch {
+            margin-top: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .switch:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <i class="fas fa-lightbulb light-bulb" id="lightBulb"></i>
+        <button class="switch" id="switchButton">Switch On</button>
+    </div>
+
+    <script>
+        const lightBulb = document.getElementById('lightBulb');
+        const switchButton = document.getElementById('switchButton');
+        let isLightOn = false;
+
+        switchButton.addEventListener('click', () => {
+            isLightOn = !isLightOn;
+            if (isLightOn) {
+                lightBulb.classList.add('on');
+                switchButton.textContent = 'Switch Off';
+            } else {
+                lightBulb.classList.remove('on');
+                switchButton.textContent = 'Switch On';
+            }
+        });
+    </script>
+</body>
+</html>
